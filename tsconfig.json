@@ -14,5 +14,5 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["core", "plain", "effect", "fixtures", "demo"]
+  "include": ["core", "plain", "effect", "otlp", "fixtures", "demo"]
 }
