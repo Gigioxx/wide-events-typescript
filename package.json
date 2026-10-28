@@ -1,0 +1,33 @@
+{
+  "name": "wide-events-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wide events (canonical log lines) in TypeScript: plain and Effect versions, tested, with a DuckDB demo.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "plain": "bun plain/example/main.ts",
+    "effect": "bun effect/example/main.ts",
+    "demo": "bun run demo:simulate && bun run demo:investigate",
+    "demo:simulate": "bun demo/simulate.ts",
+    "demo:investigate": "bun demo/investigate.ts",
+    "test": "bun test",
+    "typecheck": "tsc -p .",
+    "lint": "oxlint --deny-warnings",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "check": "bun run typecheck && bun run lint && bun run format:check && bun test"
+  },
+  "dependencies": {
+    "effect": "^4.0.7",
+    "hono": "^4.13.14"
+  },
+  "devDependencies": {
+    "@duckdb/node-api": "^2.0.0-r.1",
+    "@types/bun": "^1.4.4",
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "bun@1.4.4"
+}
