@@ -7,6 +7,7 @@ This repository is a reference implementation of wide events in TypeScript. Read
 - `core/`: the shared contract, with no dependencies. Both versions build on it.
 - `plain/`: the `AsyncLocalStorage` lifecycle and Hono middleware.
 - `effect/`: the Effect 4 services and `HttpRouter` middleware.
+- `otlp/`: a sink that exports events as OpenTelemetry log records.
 - `fixtures/`: the fake store for the examples. It must not import wide event code.
 - `demo/`: the simulator and the DuckDB queries.
 

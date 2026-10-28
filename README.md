@@ -83,6 +83,7 @@ Debugging turns into `group by`: which release, which plan, which flag, which co
 | [`core/`](core)         | Field contract, trace context, environment, event builder, tail sampling, sinks. No dependencies. | Always. Both versions build on it. |
 | [`plain/`](plain)       | `AsyncLocalStorage` lifecycle, Hono middleware, example services.                                 | Your code is plain TypeScript.     |
 | [`effect/`](effect)     | Effect 4 services, `withWideEvent`, `HttpRouter` middleware, example services.                    | Your code uses Effect.             |
+| [`otlp/`](otlp)         | A sink that exports events as OpenTelemetry log records over OTLP.                                | Your backend speaks OTLP.          |
 | [`demo/`](demo)         | Traffic simulator and a step-by-step DuckDB investigation.                                        | You want to see why it matters.    |
 | [`fixtures/`](fixtures) | A fake store shared by the examples. It knows nothing about wide events.                          | Never.                             |
 
@@ -159,6 +160,8 @@ Both versions emit the same events from the same `core/`. The difference is how 
 ## Querying
 
 Any store that can query JSON at scale works: ClickHouse, BigQuery, DuckDB, Honeycomb, Axiom, Datadog. The demo uses DuckDB on a JSONL file, so it runs with nothing else installed. See [demo/README.md](demo/README.md).
+
+For an OpenTelemetry backend, [`otlp/`](otlp/README.md) sends each event as one OTLP log record, linked to its trace.
 
 ## Use with AI coding agents
 

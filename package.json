@@ -19,6 +19,10 @@
     "check": "bun run typecheck && bun run lint && bun run format:check && bun test"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.10.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.300.0",
+    "@opentelemetry/resources": "^3.0.0",
+    "@opentelemetry/sdk-logs": "^3.0.0",
     "effect": "^4.0.7",
     "hono": "^4.13.14"
   },
